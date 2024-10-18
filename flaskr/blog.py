@@ -1,6 +1,6 @@
 ### INF601 - Advanced Programming in Python
 ### Sokly Hour
-### Mini Project 1
+### Mini Project 3
 
 from flask import (
     Blueprint, g, redirect, render_template, request, url_for
