@@ -15,6 +15,7 @@ The Fitness Tracker is an Flask application allowing users to track all their fi
 **Responsiveness**: The application is built with Bootstrap, making it quite responsive and user-friendly on any device. The design is not only visually appealing but also functional, with a **Bootstrap modal** integrated on the "About Us" page for user engagement.
 
 **SQLite Database**: The application is to be based on a SQLite database, which will store records of the users' information and the records of activities. There should at least be two related tables: one for user information and one for workout records. This should be linked with a foreign key.
+
 **Multi-page Application**: The application consists at least five  pages such as Fitness Tracker page, Login page, Logut page, Registar page, Contact page, About us page and Tips Page.
 
 # Fitness Tracker Application
