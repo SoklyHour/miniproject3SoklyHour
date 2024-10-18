@@ -62,4 +62,4 @@ SoklyHour
 Inspiration, code snippets, etc.
 * [flask](https://flask.palletsprojects.com/en/3.0.x/tutorial/)
 * [bootstrap](https://getbootstrap.com/)
-* [ChatGPT]()
+* [ChatGPT](https://chatgpt.com/share/671284ff-a42c-8005-a75b-0d60647dccdf)
