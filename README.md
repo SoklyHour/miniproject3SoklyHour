@@ -1,7 +1,3 @@
-flask --app flaskr init-db
-
-flask --app flaskr run
-
 # miniproject3SoklyHour
 
 ### INF601 - Advanced Programming in Python
