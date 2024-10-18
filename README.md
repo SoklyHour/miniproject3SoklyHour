@@ -6,7 +6,7 @@
 
 
 ## Overview
-The Fitness Tracker is an Flask application allowing users to track all their fitness activities, including creating and managing workouts and observing progress over time. Some key features of the application include:
+The Fitness Tracker is an Flask application allowing users to track all their fitness activities, including posting workout progress, editing workout progress, deleting workout progress, and observing progress over time in their accounts. Some key features of the application include:
 
 **User Authentication**: The user has a safe and secure login/register system in place where they can create their own accounts, ensuring their data is secure and only they may access it.
 
