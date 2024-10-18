@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block header %}
+  <h1>About Our Company</h1>
+  <p>Learn more about who we are and what we do.</p>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>Our Mission</h2>
+        <p>We are committed to delivering high-quality services and products to our clients, leveraging the latest technology and innovation to make the world a better place.</p>
+        <p><strong>Want to learn more about our values and team?</strong></p>
+        
+        <!-- Trigger Button for the Modal -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#aboutModal">
+          Learn More
+        </button>
+
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="aboutModalLabel">More About Us</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Who we are:</strong> We are a team of experienced professionals passionate about creating innovative solutions that make an impact on the world. Our focus is on providing our clients with the best tools and support to help them succeed.</p>
+                <p><strong>Our Values:</strong></p>
+                <ul>
+                  <li>Innovation and creativity</li>
+                  <li>Integrity and transparency</li>
+                  <li>Commitment to excellence</li>
+                  <li>Client-centric approach</li>
+                </ul>
+                <p><strong>Meet our team:</strong> Our team consists of experts in various fields, including web development, data analytics, and project management. We work collaboratively to ensure every project meets the highest standards.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

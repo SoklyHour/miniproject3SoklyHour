@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Post{% endblock %}
+
+{% block header %}
+  <h1>Edit "{{ post['title'] }}"</h1>
+  <p>Make changes to your post and save when you're ready.</p>
+{% endblock %}
+
+{% block content %}
+  <form method="post" class="form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" class="form-control" value="{{ request.form['title'] or post['title'] }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea name="body" id="body" class="form-control" rows="8" required>{{ request.form['body'] or post['body'] }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+
+  <hr>
+
+  <form method="post" action="{{ url_for('blog.delete', id=post['id']) }}" onsubmit="return confirm('Are you sure you want to delete this post?');">
+    <button type="submit" class="btn btn-danger">Delete Post</button>
+  </form>
+{% endblock %}
