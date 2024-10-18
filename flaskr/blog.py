@@ -102,3 +102,7 @@ def about():
 @bp.route('/contact', methods=['GET'])
 def contact():
     return render_template('blog/contact.html')  # Ensure the path is correct
+
+@bp.route('/tips', methods=['GET'])  # New Tips route
+def tips():
+    return render_template('blog/tips.html')  # Point to your new tips template

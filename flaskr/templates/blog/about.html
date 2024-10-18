@@ -1,48 +1,41 @@
 {% extends 'base.html' %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}Fitness Tracker{% endblock %}
 
 {% block header %}
-  <h1>About Our Company</h1>
-  <p>Learn more about who we are and what we do.</p>
+  <h1>Welcome to Your Fitness Tracker</h1>
+  <p>Track your workouts, monitor your progress, and stay motivated!</p>
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>Our Mission</h2>
-        <p>We are committed to delivering high-quality services and products to our clients, leveraging the latest technology and innovation to make the world a better place.</p>
-        <p><strong>Want to learn more about our values and team?</strong></p>
+        <h2>Your Health, Your Journey</h2>
+        <p>Our Fitness Tracker is designed to help you achieve your fitness goals by providing you with the tools you need to monitor your activities and progress.</p>
+        <p><strong>Want to learn more about our features?</strong></p>
         
         <!-- Trigger Button for the Modal -->
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#aboutModal">
-          Learn More
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#featuresModal">
+          Explore Features
         </button>
 
-        <!-- Bootstrap Modal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+        <!-- Bootstrap Modal for Features -->
+        <div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="aboutModalLabel">More About Us</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title" id="featuresModalLabel">Features of Our Fitness Tracker</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <p><strong>Who we are:</strong> We are a team of experienced professionals passionate about creating innovative solutions that make an impact on the world. Our focus is on providing our clients with the best tools and support to help them succeed.</p>
-                <p><strong>Our Values:</strong></p>
-                <ul>
-                  <li>Innovation and creativity</li>
-                  <li>Integrity and transparency</li>
-                  <li>Commitment to excellence</li>
-                  <li>Client-centric approach</li>
-                </ul>
-                <p><strong>Meet our team:</strong> Our team consists of experts in various fields, including web development, data analytics, and project management. We work collaboratively to ensure every project meets the highest standards.</p>
+                <p><strong>Track Your Workouts:</strong> Log your exercises, sets, reps, and duration to keep an accurate record of your fitness journey.</p>
+                <p><strong>Monitor Your Progress:</strong> Track your workouts over time to see how you improve.</p>
+                <p><strong>Set Goals:</strong> Set daily, weekly, and monthly fitness goals to stay motivated and focused.</p>
+                <p><strong>Connect with Friends:</strong> Share your progress with friends and challenge each other to reach new fitness milestones.</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -52,3 +45,6 @@
     </div>
   </div>
 {% endblock %}
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
