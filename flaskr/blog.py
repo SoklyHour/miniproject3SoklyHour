@@ -3,7 +3,7 @@
 ### Mini Project 1
 
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, g, redirect, render_template, request, url_for
 )
 from werkzeug.exceptions import abort
 
@@ -34,16 +34,16 @@ def create():
             error = 'Title is required.'
 
         if error is not None:
-            flash(error)
-        else:
-            db = get_db()
-            db.execute(
-                'INSERT INTO post (title, body, author_id)'
-                ' VALUES (?, ?, ?)',
-                (title, body, g.user['id'])
-            )
-            db.commit()
-            return redirect(url_for('blog.index'))
+            return render_template('blog/create.html', error=error)
+
+        db = get_db()
+        db.execute(
+            'INSERT INTO post (title, body, author_id)'
+            ' VALUES (?, ?, ?)',
+            (title, body, g.user['id'])
+        )
+        db.commit()
+        return redirect(url_for('blog.index'))
 
     return render_template('blog/create.html')
 
@@ -77,16 +77,16 @@ def update(id):
             error = 'Title is required.'
 
         if error is not None:
-            flash(error)
-        else:
-            db = get_db()
-            db.execute(
-                'UPDATE post SET title = ?, body = ?'
-                ' WHERE id = ?',
-                (title, body, id)
-            )
-            db.commit()
-            return redirect(url_for('blog.index'))
+            return render_template('blog/update.html', post=post, error=error)
+
+        db = get_db()
+        db.execute(
+            'UPDATE post SET title = ?, body = ?'
+            ' WHERE id = ?',
+            (title, body, id)
+        )
+        db.commit()
+        return redirect(url_for('blog.index'))
 
     return render_template('blog/update.html', post=post)
 
@@ -101,12 +101,21 @@ def delete(id):
 
 @bp.route('/about')
 def about():
-    return render_template('blog/about.html')
+    return render_template('blog/about.html')  # Renders the 'About Us' page
 
-@bp.route('/contact', methods=['GET'])
+@bp.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('blog/contact.html')  # Ensure the path is correct
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        
+        # Process the form data (placeholder for future enhancements)
+        
+        return redirect(url_for('blog.contact'))
+    
+    return render_template('blog/contact.html')  # Renders the 'Contact Us' page
 
-@bp.route('/tips', methods=['GET'])  # New Tips route
+@bp.route('/tips', methods=['GET'])
 def tips():
-    return render_template('blog/tips.html')  # Point to your new tips template
+    return render_template('blog/tips.html')  # Renders the 'Fitness Tips' page
