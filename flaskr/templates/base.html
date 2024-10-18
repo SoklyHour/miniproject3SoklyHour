@@ -6,16 +6,15 @@
     <title>{% block title %}Flaskr{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('blog.index') }}">Fitness Tracker</a> <!-- Flaskr link as brand -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{{ url_for('blog.index') }}">Fitness Tracker</a> <!-- Brand link -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto"> <!-- Updated for Bootstrap 5 -->
                 {% if not g.user %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a> <!-- Register link -->
@@ -28,7 +27,7 @@
                         <span class="navbar-text">{{ g.user['username'] }}</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a> <!-- Logout for logged-in users -->
+                        <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a> <!-- Logout link -->
                     </li>
                 {% endif %}
                 <li class="nav-item">
@@ -38,7 +37,7 @@
                     <a class="nav-link" href="{{ url_for('blog.about') }}">About Us</a> <!-- About Us link -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('blog.tips') }}">Tips</a> <!-- Link to Tips page -->
+                    <a class="nav-link" href="{{ url_for('blog.tips') }}">Tips</a> <!-- Tips link -->
                 </li>
             </ul>
         </div>
@@ -61,5 +60,8 @@
             <span class="text-muted">&copy; {{ current_year }} Fitness Tracker. All rights reserved.</span>
         </div>
     </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

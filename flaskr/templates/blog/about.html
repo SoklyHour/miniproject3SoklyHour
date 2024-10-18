@@ -3,36 +3,56 @@
 {% block title %}Fitness Tracker{% endblock %}
 
 {% block header %}
-  <h1>Welcome to Your Fitness Tracker</h1>
-  <p>Track your workouts, monitor your progress, and stay motivated!</p>
+  <div class="text-center py-5 bg-light">
+    <h1 class="display-4">Welcome to Your Fitness Tracker</h1>
+    <p class="lead">Track your workouts, monitor your progress, and stay motivated!</p>
+  </div>
 {% endblock %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h2>Your Health, Your Journey</h2>
-        <p>Our Fitness Tracker is designed to help you achieve your fitness goals by providing you with the tools you need to monitor your activities and progress.</p>
-        <p><strong>Want to learn more about our features?</strong></p>
-        
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="mb-4">Your Health, Your Journey</h2>
+        <p class="mb-4">
+          Our Fitness Tracker is designed to help you achieve your fitness goals by providing you with the tools you need to monitor your activities and progress.
+        </p>
+        <p class="mb-4">
+          <strong>Want to learn more about our features?</strong>
+        </p>
+
         <!-- Trigger Button for the Modal -->
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#featuresModal">
+        <button type="button" class="btn btn-primary btn-lg px-5" data-bs-toggle="modal" data-bs-target="#featuresModal">
           Explore Features
         </button>
 
         <!-- Bootstrap Modal for Features -->
         <div class="modal fade" id="featuresModal" tabindex="-1" aria-labelledby="featuresModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="featuresModalLabel">Features of Our Fitness Tracker</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <p><strong>Track Your Workouts:</strong> Log your exercises, sets, reps, and duration to keep an accurate record of your fitness journey.</p>
-                <p><strong>Monitor Your Progress:</strong> Track your workouts over time to see how you improve.</p>
-                <p><strong>Set Goals:</strong> Set daily, weekly, and monthly fitness goals to stay motivated and focused.</p>
-                <p><strong>Connect with Friends:</strong> Share your progress with friends and challenge each other to reach new fitness milestones.</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6 class="fw-bold">Track Your Workouts</h6>
+                    <p>Log your exercises, sets, reps, and duration to keep an accurate record of your fitness journey.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 class="fw-bold">Monitor Your Progress</h6>
+                    <p>Track your workouts over time to see how you improve.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 class="fw-bold">Set Goals</h6>
+                    <p>Set daily, weekly, and monthly fitness goals to stay motivated and focused.</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 class="fw-bold">Connect with Friends</h6>
+                    <p>Share your progress with friends and challenge each other to reach new fitness milestones.</p>
+                  </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
